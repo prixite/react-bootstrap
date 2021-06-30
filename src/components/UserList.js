@@ -1,10 +1,10 @@
 export function UserList () {
   const users = [
     { name: 'Umair Khan', id: 'umair' },
-    { name: 'John Doe', id: 'john' },
+    { name: 'John Doe', id: 'john' }
   ]
 
-  const elements = users.map(({name, id}) => <li key={id}>{name}</li>)
+  const elements = users.map(({ name, id }) => <li key={id}>{name}</li>)
 
   return (
     <div>
