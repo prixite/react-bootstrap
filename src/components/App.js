@@ -17,7 +17,7 @@ import Link from '@material-ui/core/Link'
 import MenuIcon from '@material-ui/icons/Menu'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import { mainListItems } from './ListItems'
-import Orders from './Orders'
+import Scoops from './Scoops'
 
 function Copyright () {
   return (
@@ -160,10 +160,9 @@ export default function App () {
         <div className={classes.appBarSpacer} />
         <Container maxWidth='lg' className={classes.container}>
           <Grid container spacing={3}>
-            {/* Recent Orders */}
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-                <Orders />
+                <Scoops />
               </Paper>
             </Grid>
           </Grid>
