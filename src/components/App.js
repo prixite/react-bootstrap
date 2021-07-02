@@ -4,6 +4,7 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import Main from './Main'
 import SideMenu from './SideMenu'
 import TopBar from './TopBar'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 const drawerWidth = 240
 
@@ -99,8 +100,10 @@ export default function App () {
     <div className={classes.root}>
       <CssBaseline />
       <TopBar classes={classes} open={open} handleDrawerOpen={handleDrawerOpen} />
-      <SideMenu open={open} classes={classes} handleDrawerClose={handleDrawerClose} />
-      <Main classes={classes} />
+      <Router>
+        <SideMenu open={open} classes={classes} handleDrawerClose={handleDrawerClose} />
+        <Main classes={classes} />
+      </Router>
     </div>
   )
 }

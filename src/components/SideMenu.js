@@ -9,10 +9,12 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 
+import { NavLink } from 'react-router-dom'
+
 export default function SideMenu (props) {
-  let open = props.open
-  let classes = props.classes
-  let handleDrawerClose = props.handleDrawerClose
+  const open = props.open
+  const classes = props.classes
+  const handleDrawerClose = props.handleDrawerClose
 
   return (
     <Drawer
@@ -34,19 +36,25 @@ export default function SideMenu (props) {
             <ListItemIcon>
               <AssignmentIcon />
             </ListItemIcon>
-            <ListItemText primary='Today' />
+            <NavLink to='/today/'>
+              <ListItemText primary='Today' />
+            </NavLink>
           </ListItem>
           <ListItem button>
             <ListItemIcon>
               <AssignmentIcon />
             </ListItemIcon>
-            <ListItemText primary='This Week' />
+            <NavLink to='/this-week/'>
+              <ListItemText primary='This Week' />
+            </NavLink>
           </ListItem>
           <ListItem button>
             <ListItemIcon>
               <AssignmentIcon />
             </ListItemIcon>
-            <ListItemText primary='This Month' />
+            <NavLink to='/this-month/'>
+              <ListItemText primary='This Month' />
+            </NavLink>
           </ListItem>
         </div>
       </List>

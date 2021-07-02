@@ -6,9 +6,9 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 
 export default function TopBar (props) {
-  let classes = props.classes
-  let open = props.open
-  let handleDrawerOpen = props.handleDrawerOpen
+  const classes = props.classes
+  const open = props.open
+  const handleDrawerOpen = props.handleDrawerOpen
 
   return (
     <AppBar position='absolute' className={clsx(classes.appBar, open && classes.appBarShift)}>
