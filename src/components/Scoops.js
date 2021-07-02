@@ -80,7 +80,7 @@ export default function Scoops (props) {
       </Table>
       <div className={classes.seeMore}>
         <Link color='primary' href='#' onClick={preventDefault}>
-          See more Scoops
+          See more scoops
         </Link>
       </div>
     </>
