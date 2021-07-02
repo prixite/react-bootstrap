@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Scoops (props) {
   const classes = useStyles()
-  let rows;
+  let rows
 
   if (props.duration === 'today') {
     rows = today

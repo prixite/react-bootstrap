@@ -8,8 +8,9 @@ import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
-
 import { NavLink } from 'react-router-dom'
+
+import { routes } from '../urls'
 
 export default function SideMenu (props) {
   const open = props.open
@@ -32,30 +33,16 @@ export default function SideMenu (props) {
       <Divider />
       <List>
         <div>
-          <ListItem button>
-            <ListItemIcon>
-              <AssignmentIcon />
-            </ListItemIcon>
-            <NavLink to='/today/'>
-              <ListItemText primary='Today' />
-            </NavLink>
-          </ListItem>
-          <ListItem button>
-            <ListItemIcon>
-              <AssignmentIcon />
-            </ListItemIcon>
-            <NavLink to='/this-week/'>
-              <ListItemText primary='This Week' />
-            </NavLink>
-          </ListItem>
-          <ListItem button>
-            <ListItemIcon>
-              <AssignmentIcon />
-            </ListItemIcon>
-            <NavLink to='/this-month/'>
-              <ListItemText primary='This Month' />
-            </NavLink>
-          </ListItem>
+          {routes.map((route, key) => (
+            <ListItem button key={key}>
+              <ListItemIcon>
+                <AssignmentIcon />
+              </ListItemIcon>
+              <NavLink to={route.path}>
+                <ListItemText primary={route.text} />
+              </NavLink>
+            </ListItem>
+          ))}
         </div>
       </List>
     </Drawer>

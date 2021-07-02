@@ -7,7 +7,8 @@ import {
   Route
 } from 'react-router-dom'
 import Copyright from './Copyright'
-import Scoops from './Scoops'
+
+import { routes } from '../urls'
 
 export default function Main (props) {
   const classes = props.classes
@@ -20,15 +21,11 @@ export default function Main (props) {
           <Grid item xs={12}>
             <Paper className={classes.paper}>
               <Switch>
-                <Route path='/today/'>
-                  <Scoops duration='today' />
-                </Route>
-                <Route path='/this-week/'>
-                  <Scoops duration='week' />
-                </Route>
-                <Route path='/this-month/'>
-                  <Scoops duration='month' />
-                </Route>
+                {routes.map((route, key) => (
+                  <Route key={key} path={route.path}>
+                    <route.Content />
+                  </Route>
+                ))}
               </Switch>
             </Paper>
           </Grid>
