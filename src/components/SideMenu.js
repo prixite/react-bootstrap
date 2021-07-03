@@ -42,6 +42,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       width: theme.spacing(9)
     }
+  },
+  sideMenuLink: {
+    textDecoration: 'none',
+    color: 'inherit'
   }
 }))
 
@@ -72,7 +76,7 @@ export default function SideMenu (props) {
               <ListItemIcon>
                 <AssignmentIcon />
               </ListItemIcon>
-              <NavLink to={route.path}>
+              <NavLink to={route.path} className={classes.sideMenuLink}>
                 <ListItemText primary={route.text} />
               </NavLink>
             </ListItem>
