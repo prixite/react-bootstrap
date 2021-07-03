@@ -22,7 +22,7 @@ export default function Main (props) {
             <Paper className={classes.paper}>
               <Switch>
                 {routes.map((route, key) => (
-                  <Route key={key} path={route.path}>
+                  <Route key={key} exact path={route.path}>
                     <route.Content />
                   </Route>
                 ))}
