@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import { makeStyles } from '@material-ui/core/styles'
 import AssignmentIcon from '@material-ui/icons/Assignment'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import Divider from '@material-ui/core/Divider'
@@ -12,9 +13,42 @@ import { NavLink } from 'react-router-dom'
 
 import { routes } from '../urls'
 
+const drawerWidth = 240
+
+const useStyles = makeStyles((theme) => ({
+  toolbarIcon: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    padding: '0 8px',
+    ...theme.mixins.toolbar
+  },
+  drawerPaper: {
+    position: 'relative',
+    whiteSpace: 'nowrap',
+    width: drawerWidth,
+    transition: theme.transitions.create('width', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen
+    })
+  },
+  drawerPaperClose: {
+    overflowX: 'hidden',
+    transition: theme.transitions.create('width', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen
+    }),
+    width: theme.spacing(7),
+    [theme.breakpoints.up('sm')]: {
+      width: theme.spacing(9)
+    }
+  }
+}))
+
 export default function SideMenu (props) {
+  const classes = useStyles()
+
   const open = props.open
-  const classes = props.classes
   const handleDrawerClose = props.handleDrawerClose
 
   return (
